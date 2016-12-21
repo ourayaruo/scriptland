@@ -2,44 +2,46 @@
 //compounding of accesories
 // step1() -> step2() -> compound_proper()
 
-function _compoundtest(){
+setInterval(function(){
+	
+	function _compoundtest(){
 	console.log("Ugly code incoming! -- should edit this next time");
-    function step1(){
-    	var ringctr=[]; 
-    	var amuletctr=[];
-    	var beltctr=[];
-    	//earrings
-    	var ear_int = [];
-    	var ear_dex = [];
-    	var ear_str = [];
-    	//earrings
+    	function step1(){
+    		var ringctr=[]; 
+    		var amuletctr=[];
+		var beltctr=[];
+		//earrings
+		var ear_int = [];
+		var ear_dex = [];
+		var ear_str = [];
+		//earrings
 
-	    for(var x in character.items){
-	        if(character.items[x]){
-	            if(character.items[x].name == "ringsj"){ 
-	            ringctr.push({name: character.items[x].name,level: character.items[x].level, index: x});
-	            }
-	            else if(character.items[x].name == "hpbelt"){ 
-	                beltctr.push({name: character.items[x].name, level: character.items[x].level, index: x});
-	            }
-	            else if(character.items[x].name =="hpamulet"){ 
-	            	amuletctr.push({name: character.items[x].name, level: character.items[x].level, index: x });
-	            }
-	       		else if(character.items[x].name =="strearring"){ 
-	            	ear_str.push({name: character.items[x].name, level: character.items[x].level, index: x });
-	            }
-	            else if(character.items[x].name =="dexearring"){ 
-	            	ear_dex.push({name: character.items[x].name, level: character.items[x].level, index: x });
-	            }
-	            else if(character.items[x].name =="intearring"){ 
-	            	ear_int.push({name: character.items[x].name, level: character.items[x].level, index: x });
-	            }
-	            else if(character.items[x].name == "cscroll0"){
-	            	if(character.items[x].q<10) buy("cscroll0",1);
-	        		else continue;
-	            }
-	    		else {continue;} 
-	        }}
+		    for(var x in character.items){
+			if(character.items[x]){
+			    if(character.items[x].name == "ringsj"){ 
+			    ringctr.push({name: character.items[x].name,level: character.items[x].level, index: x});
+			    }
+			    else if(character.items[x].name == "hpbelt"){ 
+				beltctr.push({name: character.items[x].name, level: character.items[x].level, index: x});
+			    }
+			    else if(character.items[x].name =="hpamulet"){ 
+				amuletctr.push({name: character.items[x].name, level: character.items[x].level, index: x });
+			    }
+				else if(character.items[x].name =="strearring"){ 
+				ear_str.push({name: character.items[x].name, level: character.items[x].level, index: x });
+			    }
+			    else if(character.items[x].name =="dexearring"){ 
+				ear_dex.push({name: character.items[x].name, level: character.items[x].level, index: x });
+			    }
+			    else if(character.items[x].name =="intearring"){ 
+				ear_int.push({name: character.items[x].name, level: character.items[x].level, index: x });
+			    }
+			    else if(character.items[x].name == "cscroll0"){
+				if(character.items[x].q<10) buy("cscroll0",1);
+					else continue;
+			    }
+				else {continue;} 
+			}}
 	    
 	    if(ringctr.length>=3){ step2(ringctr); }
 	    if(beltctr.length>=3){ step2(beltctr); }
@@ -49,7 +51,7 @@ function _compoundtest(){
 	    if(ear_int.length>=3){ step2(ear_int); }
 	    if(ear_dex.length>=3){ step2(ear_dex); }
 	    //else return;
-		}//end step1();  
+	}//end step1();  
 
 	function step2(arr){  
 	    var prop = ["level0","level1","level2"]; 
@@ -92,3 +94,5 @@ step1();
 
 //call _compoundtest() of course
 _compoundtest();
+}, 1000);
+
