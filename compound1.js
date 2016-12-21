@@ -5,7 +5,7 @@
 setInterval(function(){
 	
 	function _compoundtest(){
-	console.log("Ugly code incoming! -- should edit this next time");
+	//console.log("Ugly code incoming! -- should edit this next time");
     	function step1(){
     		var ringctr=[]; 
     		var amuletctr=[];
