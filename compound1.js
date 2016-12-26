@@ -1,8 +1,6 @@
 //ihavenoideawhatimdoing
 //compounding of accesories
 // step1() -> step2() -> compound_proper()
-
-setInterval(function(){
 	
 	function _compoundtest(){
 	//console.log("Ugly code incoming! -- should edit this next time");
@@ -92,7 +90,6 @@ setInterval(function(){
 step1();
 }//end _compoundtest();
 
-//call _compoundtest() of course
-_compoundtest();
-}, 1000);
+setInterval(_compoundtest, 1000);
+
 
